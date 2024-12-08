@@ -1,4 +1,5 @@
-import { Logo } from "@/components/Logo";
+import { NavItem } from "@/components/pages/dashboard/nav-item";
+import { Logo } from "@/components/shared/Logo";
 
 type DashboardLayouteProps = {
   children: React.ReactNode;
@@ -11,6 +12,7 @@ export default function DashboardLayout({ children }: DashboardLayouteProps) {
         <div className="w-full p-6 border-b border-muted">
           <Logo />
         </div>
+        <NavItem />
       </aside>
       <main>
         {children}
