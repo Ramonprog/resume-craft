@@ -29,7 +29,6 @@ export function UserDropdown() {
           <DropdownMenuItem>
             <SquareUser size={16} />
             <DropdownMenuLabel>Configurações de Conta</DropdownMenuLabel>
-
           </DropdownMenuItem>
         </Link>
       </DropdownMenuContent>
