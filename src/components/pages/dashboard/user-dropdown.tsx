@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import Link from "next/link";
-import { SquareUser } from "lucide-react";
+import { LogOut, SquareUser } from "lucide-react";
 
 
 
@@ -29,6 +29,10 @@ export function UserDropdown() {
           <DropdownMenuItem>
             <SquareUser size={16} />
             <DropdownMenuLabel>Configurações de Conta</DropdownMenuLabel>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <LogOut size={16} />
+            <DropdownMenuLabel>Sair</DropdownMenuLabel>
           </DropdownMenuItem>
         </Link>
       </DropdownMenuContent>

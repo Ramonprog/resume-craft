@@ -1,6 +1,7 @@
 import { NavItem } from "@/components/pages/dashboard/nav-item";
 import { UserDropdown } from "@/components/pages/dashboard/user-dropdown";
 import { Logo } from "@/components/shared/Logo";
+import { ModeToggle } from "@/components/shared/theme-toggle";
 
 type DashboardLayouteProps = {
   children: React.ReactNode;
@@ -20,6 +21,7 @@ export default function DashboardLayout({ children }: DashboardLayouteProps) {
 
         <div className="w-full mt-auto  border-t border-muted px-3 py-4 flex items-center justify-between gap-2">
           <UserDropdown />
+          <ModeToggle />
         </div>
       </aside>
       <main>
