@@ -7,14 +7,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./primitive"
+import { BaseDialogTpe } from "@/base-dialog-tpes";
 
-type DialogComponentProps = {
-  children?: ReactNode
+type DialogComponentProps = BaseDialogTpe & {
   title: string;
   description?: string;
   content: ReactNode;
-  open?: boolean;
-  setOpen?: (open: boolean) => void;
 };
 
 export function DialogComponent({ content, title, children, description, open, setOpen }: DialogComponentProps) {
