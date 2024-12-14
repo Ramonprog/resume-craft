@@ -3,7 +3,7 @@ import { BaseDialogTpe } from "@/base-dialog-tpes";
 import { Button } from "@/components/ui/button";
 import { DialogComponent } from "@/components/ui/dialog";
 import { Field } from "@/components/ui/input/field";
-import { useForm } from 'react-hook-form'
+import { FormProvider, useForm } from 'react-hook-form'
 
 type FormData = {
   title: string;
@@ -11,7 +11,7 @@ type FormData = {
 
 export function NewResumeDialog(props: BaseDialogTpe) {
 
-  const { handleSubmit } = useForm<FormData>()
+  const methods = useForm<FormData>()
 
   function onSubmit(data: FormData) {
     console.log(data)
@@ -23,10 +23,12 @@ export function NewResumeDialog(props: BaseDialogTpe) {
       title="Novo Currículo"
       description="Para começar, escolha um título para o seu currículo"
       content={
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <Field name="title" label="Título" placeholder="Título do Currículo" />
-          <Button type="submit">Salvar</Button>
-        </form>
+        <FormProvider {...methods}>
+          <form onSubmit={methods.handleSubmit(onSubmit)} className="flex flex-col ">
+            <Field name="title" label="Título" required placeholder="Título do Currículo" />
+            <Button type="submit" className="mt-6 ml-auto">Salvar</Button>
+          </form>
+        </FormProvider>
       }
     />
   )

@@ -9,21 +9,26 @@ type FieldProps = ComponentProps<typeof Input> & {
   name: string;
 };
 
-export function Field(props: FieldProps) {
+export function Field({ label, name, required, ...props }: FieldProps) {
 
   const { control } = useFormContext();
 
   return (
     <Controller
       control={control}
-      name={props.name}
-      render={({ field }) => (
+      name={name}
+      rules={{
+        required: required && 'Campo obrigatório',
+      }}
+      render={({ field, fieldState }) => (
         <div>
-          <Label htmlFor={props.name}>{props.label}</Label>
+          <Label className="block mb-2" htmlFor={name}>{label}</Label>
           <Input
             {...field}
             {...props}
+            id={name}
           />
+          {fieldState.error && (<span className="text-sm text-red-500">{fieldState.error.message}</span>)}
         </div>
       )}
     />
