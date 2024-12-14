@@ -2,6 +2,7 @@ import { Logo } from "@/components/shared/Logo";
 import Link from "next/link";
 import { AiGenerationDropdown } from "./ai-generation-dropdown";
 import { Separator } from "@/components/ui/separator";
+import { BasicInfo } from "./sections/basic-info";
 
 
 export function ResumeInfosSidebar() {
@@ -14,6 +15,7 @@ export function ResumeInfosSidebar() {
         <AiGenerationDropdown />
       </div>
       <Separator className="my-3" />
+      <BasicInfo />
     </aside>
   )
 }
