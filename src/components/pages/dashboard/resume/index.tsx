@@ -6,8 +6,10 @@ import {
 import { ResumeInfosSidebar } from "./infos-sidebar"
 import { ResumeContent } from "./resume-content"
 import { ResumeStructureSidebar } from "./structure-sidebar"
+import { useForm } from "react-hook-form"
 
 export function ResumePage() {
+  const methods = useForm<ResumeData>();
   return (
     <main className="w-full h-screen overflow-hidden">
       <ResizablePanelGroup direction="horizontal" className="w-full h-full">
