@@ -4,9 +4,11 @@ import { Controller, useFormContext } from "react-hook-form";
 
 type FieldProps = {
   name: string;
+  classNameContent?: string;
+  defaultChecked?: boolean;
 };
 
-export function SwitchField({ name, ...props }: FieldProps) {
+export function SwitchField({ name, classNameContent, defaultChecked, ...props }: FieldProps) {
 
   const { control } = useFormContext();
 
@@ -15,8 +17,9 @@ export function SwitchField({ name, ...props }: FieldProps) {
       control={control}
       name={name}
       render={({ field }) => (
-        <div>
+        <div className={`${classNameContent}`}>
           <Switch
+            defaultChecked={defaultChecked}
             checked={field.value}
             {...props}
             onCheckedChange={field.onChange}
