@@ -7,9 +7,10 @@ import { Label } from "../label";
 type FieldProps = ComponentProps<typeof Input> & {
   label: string;
   name: string;
+  containerClassName?: string;
 };
 
-export function Field({ label, name, required, ...props }: FieldProps) {
+export function Field({ label, name, required, containerClassName, ...props }: FieldProps) {
 
   const { control } = useFormContext();
 
@@ -21,7 +22,7 @@ export function Field({ label, name, required, ...props }: FieldProps) {
         required: required && 'Campo obrigatório',
       }}
       render={({ field, fieldState }) => (
-        <div>
+        <div className={`${containerClassName}`}>
           <Label className="block mb-2" htmlFor={name}>{label}</Label>
           <Input
             {...field}

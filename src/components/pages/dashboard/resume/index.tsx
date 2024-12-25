@@ -1,3 +1,4 @@
+'use client'
 import {
   ResizableHandle,
   ResizablePanel,
@@ -6,28 +7,31 @@ import {
 import { ResumeInfosSidebar } from "./infos-sidebar"
 import { ResumeContent } from "./resume-content"
 import { ResumeStructureSidebar } from "./structure-sidebar"
-import { useForm } from "react-hook-form"
+import { FormProvider, useForm } from "react-hook-form"
 
 export function ResumePage() {
   const methods = useForm<ResumeData>();
   return (
-    <main className="w-full h-screen overflow-hidden">
-      <ResizablePanelGroup direction="horizontal" className="w-full h-full">
-        <ResizablePanel minSize={20} maxSize={40} defaultSize={30}>
-          <ResumeInfosSidebar />
-        </ResizablePanel>
-        <ResizableHandle withHandle />
+    <FormProvider {...methods}>
+      <main className="w-full h-screen overflow-hidden">
+        <ResizablePanelGroup direction="horizontal" className="w-full h-full">
+          <ResizablePanel minSize={20} maxSize={40} defaultSize={30}>
+            <ResumeInfosSidebar />
+          </ResizablePanel>
+          <ResizableHandle withHandle />
 
-        <ResizablePanel>
-          <ResumeContent />
-        </ResizablePanel>
-        <ResizableHandle withHandle />
+          <ResizablePanel>
+            <ResumeContent />
+          </ResizablePanel>
+          <ResizableHandle withHandle />
 
-        <ResizablePanel minSize={20} maxSize={35} defaultSize={25}>
-          <ResumeStructureSidebar />
-        </ResizablePanel>
-      </ResizablePanelGroup>
+          <ResizablePanel minSize={20} maxSize={35} defaultSize={25}>
+            <ResumeStructureSidebar />
+          </ResizablePanel>
+        </ResizablePanelGroup>
 
-    </main>
+      </main>
+    </FormProvider>
+
   )
 }

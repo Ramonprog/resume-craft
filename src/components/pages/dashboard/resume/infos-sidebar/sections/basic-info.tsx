@@ -13,6 +13,7 @@ export function BasicInfo() {
             label="Foto"
             placeholder="https://..."
             name='content.image.url'
+            containerClassName="flex-1"
           />
         </div>
       </div>
