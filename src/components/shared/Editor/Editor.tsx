@@ -56,7 +56,9 @@ export function Editor({ value, onChange, className }: Props) {
     <div className={cn('bg-background border border-muted rounded-2xl w-full flex flex-col', className)}>
       <div className="">
         <MenuBar editor={editor} />
-        <EditorContent editor={editor} />
+        <div className="h-full [&>div]:f-hull flex flex-col overflow-y-auto">
+          <EditorContent editor={editor} />
+        </div>
       </div>
     </div>
   )

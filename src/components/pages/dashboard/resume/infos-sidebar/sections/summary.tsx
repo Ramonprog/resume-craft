@@ -16,7 +16,7 @@ export function SummarySection() {
         name="content.summary"
         render={({ field }) => (
           <div >
-            <Editor {...field} />
+            <Editor {...field} className="min-h-[200px] max-h-[300px] mt-4" />
           </div>
         )}
       />
