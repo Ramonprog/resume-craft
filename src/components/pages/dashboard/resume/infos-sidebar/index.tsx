@@ -4,6 +4,7 @@ import { AiGenerationDropdown } from "./ai-generation-dropdown";
 import { Separator } from "@/components/ui/separator";
 import { BasicInfo } from "./sections/basic-info";
 import { SummarySection } from "./sections/summary";
+import { MultiplesSection } from "./sections/multiples";
 
 
 export function ResumeInfosSidebar() {
@@ -24,6 +25,8 @@ export function ResumeInfosSidebar() {
       <Separator className="my-3" />
 
       <SummarySection />
+
+      <MultiplesSection />
 
     </aside>
   )

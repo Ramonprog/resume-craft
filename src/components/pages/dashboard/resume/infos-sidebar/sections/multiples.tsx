@@ -1,8 +1,11 @@
+import { Separator } from "@/components/ui/separator";
 import { BicepsFlexed, BriefcaseBusiness, FileBadge2, Globe, GraduationCap, Languages, Share2 } from "lucide-react";
+import { Fragment } from "react";
+import { multipleDragItemData, MultipleDragList } from "../multiple-drag-list";
 
 
 export function MultiplesSection() {
-  const sectionsKeys: unknown[] = [
+  const sectionsKeys: multipleDragItemData[] = [
     {
       formKey: "socialMedias",
       title: "Redes Sociais",
@@ -54,6 +57,13 @@ export function MultiplesSection() {
     },
   ];
   return (
-    <div className=""></div>
+    <div className="">
+      {sectionsKeys.map((item) => (
+        <Fragment key={`multiple-section-${item.title}`}>
+          <Separator className="my-3" />
+          <MultipleDragList data={item} onAdd={() => { }} onEdit={() => { }} />
+        </Fragment>
+      ))}
+    </div>
   )
 }
