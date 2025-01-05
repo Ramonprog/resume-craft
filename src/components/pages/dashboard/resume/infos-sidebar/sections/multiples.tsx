@@ -5,6 +5,7 @@ import { multipleDragItemData, MultipleDragList } from "../multiple-drag-list";
 
 
 export function MultiplesSection() {
+
   const sectionsKeys: multipleDragItemData[] = [
     {
       formKey: "socialMedias",
@@ -56,6 +57,7 @@ export function MultiplesSection() {
       descriptionKey: "description",
     },
   ];
+
   return (
     <div className="">
       {sectionsKeys.map((item) => (
